@@ -45,4 +45,4 @@ def main(install: bool=False,installv:str= typer.Argument(""),
         installer.install_v(installv)
         
 if __name__ == "__main__":
-        typer.run(main)
+    typer.run(main)
