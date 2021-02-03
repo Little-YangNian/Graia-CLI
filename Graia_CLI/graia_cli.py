@@ -1,3 +1,4 @@
+#! python3
 import typer
 import sys
 import os
@@ -28,6 +29,8 @@ class graia_installer():
             bad_echo("更新失败")
     def install_v(self,v):
         os.system(f"{self.py_path} -m pip install graia-application-mirai=={v}")
+app = typer.Typer()
+@app.command()
 def main(install: bool=False,installv:str= typer.Argument(""),
         upgrade: bool=False
 ):
@@ -43,6 +46,6 @@ def main(install: bool=False,installv:str= typer.Argument(""),
         installer.install()
     if installv != "":
         installer.install_v(installv)
-        
+
 if __name__ == "__main__":
-    typer.run(main)
+    app()
