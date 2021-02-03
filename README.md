@@ -8,7 +8,8 @@
 # 依赖  
 Typer  
 # 食用方法  
-python3 graia_cli.py --help
+pip install Graia_CLI  
+graia ......
 ## Thanks to:  
 [Mirai](https://github.com/mamoe/mirai)  
 [Graia](https://github.com/GraiaProject/Application)  
