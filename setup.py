@@ -1,10 +1,10 @@
 from setuptools import setup
 import setuptools
-with open("./Graia_CLI/README.md", "r", encoding="utf-8") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
         long_description = fh.read()
 setup(
             name="Graia_CLI",
-            version="0.0.1",
+            version="0.0.2",
             author="Chase杨念",
             install_requires="typer",
             author_email="2544704967@qq.com",

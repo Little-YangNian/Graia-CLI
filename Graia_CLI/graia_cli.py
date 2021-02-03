@@ -1,4 +1,5 @@
 #! python3
+from .scaffold import init as initer
 import typer
 import sys
 import os
@@ -31,9 +32,8 @@ class graia_installer():
         os.system(f"{self.py_path} -m pip install graia-application-mirai=={v}")
 app = typer.Typer()
 @app.command()
-def main(install: bool=False,installv:str= typer.Argument(""),
-        upgrade: bool=False
-):
+def install(install: bool=False,installv:str= typer.Argument(""),
+        upgrade: bool=False):
     """ 
     ./graia_cli --install 安装Graia  可选参数版本号
     
@@ -44,8 +44,12 @@ def main(install: bool=False,installv:str= typer.Argument(""),
         installer.upgrade()
     if install:
         installer.install()
-    if installv != "":
-        installer.install_v(installv)
+        if installv != "":
+            installer.install_v(installv)
+@app.command()
+def init(path:str= typer.Argument(...)):
+    initer(path)
+    normal_echo("OK")
 
 if __name__ == "__main__":
     app()
