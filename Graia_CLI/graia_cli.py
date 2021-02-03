@@ -47,6 +47,7 @@ def init(path:str= typer.Argument(...)):
     
     init_tool(path)
     normal_echo("OK")
+    """
 
 if __name__ == "__main__":
     app()
