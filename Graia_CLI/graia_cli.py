@@ -23,9 +23,9 @@ def install(
         ):
 
     """ 
-    ./graia_cli --install 安装Graia  可选参数版本号
+    graia install --install 安装Graia  可选参数版本号
     
-    ./graia_cli --upgrade 更新Graia
+    graia install --upgrade 更新Graia
     
     """ 
     
@@ -41,6 +41,9 @@ def install(
 
 @app.command()
 def init(path:str= typer.Argument(...)):
+    
+    """
+    graia init [path]
     
     init_tool(path)
     normal_echo("OK")
