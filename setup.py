@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
         long_description = fh.read()
 setup(
             name="Graia_CLI",
-            version="0.0.2",
+            version="0.0.5",
             author="Chase杨念",
             install_requires="typer",
             author_email="2544704967@qq.com",
