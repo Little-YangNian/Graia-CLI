@@ -1,2 +1,0 @@
-[console_scripts]
-                    graia=Graia_CLI.graia_cli:app

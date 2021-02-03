@@ -1,6 +1,6 @@
 #! python3
 
-from .scaffold import InitTool
+from .scaffold import init_tool
 import typer
 import sys
 import os
@@ -42,7 +42,7 @@ def install(
 @app.command()
 def init(path:str= typer.Argument(...)):
     
-    initer(path)
+    init_tool(path)
     normal_echo("OK")
 
 if __name__ == "__main__":
