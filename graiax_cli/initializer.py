@@ -18,6 +18,8 @@ class Initializer(object):
         os.chdir(path)
         if not 'config.yaml' in os.listdir():
             addr = input('httpapi 服务运行的地址：')
+            if not addr.startswith('http:\\\\'):
+                addr = 'http:\\\\' + addr
             auth_key = input('authKey：')
             websocket = input('是否使用websocket(是/否)：')
             if websocket == '是':
@@ -25,7 +27,7 @@ class Initializer(object):
             else:
                 websocket = False
             qq = input('你的机器人qq号：')
-            config(addr=addr, auth_key=auth_key, websocket=websocket, qq=qq)
+            self.config(addr=addr, auth_key=auth_key, websocket=websocket, qq=qq)
         with open('app.py', 'w+') as f:
             f.write(template.template)
         with open('bot.py', 'w+') as f:

@@ -5,10 +5,10 @@ import yaml
 
 with open('config.yaml', 'r') as f:
     configs = yaml.load(f, Loader=yaml.Loader)
-qid = int(configs['qq'])
-address = str(configs['addr'])
-key = str(configs['authKey'])
-socket = bool(configs['websocket'])
+qid = configs['qq']
+address = configs['addr']
+key = configs['authKey']
+socket = configs['websocket']
 
 loop = asyncio.get_event_loop()
 
