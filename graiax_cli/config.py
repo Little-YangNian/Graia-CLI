@@ -1,11 +1,9 @@
 import yaml
-import pathlib
 import os
 
 
 def config(path,addr,key,socket,qid):
-    path = pathlib.Path(path)
-    if not path.is_dir():
+    if not os.path.isdir(path):
         os.mkdir(path)
     if socket.lower() == "true":
         socket = True
