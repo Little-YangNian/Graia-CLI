@@ -26,5 +26,7 @@ class Initializer(object):
                 websocket = False
             qq = input('你的机器人qq号：')
             config(addr=addr, auth_key=auth_key, websocket=websocket, qq=qq)
-        with open('bot.py', 'w+') as f:
+        with open('app.py', 'w+') as f:
             f.write(template.template)
+        with open('bot.py', 'w+') as f:
+            f.write(template.bot)

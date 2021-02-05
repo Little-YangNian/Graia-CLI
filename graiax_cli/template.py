@@ -21,8 +21,11 @@ app = GraiaMiraiApplication(
         account=qid,
         websocket=socket
     )
-        
+)
+'''
 
+bot=r'''from app import bcc
+from app import app
 
 app.launch_blocking()
-)'''
+'''
