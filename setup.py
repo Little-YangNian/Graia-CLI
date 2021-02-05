@@ -3,13 +3,13 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
         long_description = fh.read()
 setup(
-            name="Graia_CLI",
-            version="0.0.5",
+            name="graiax_cli",
+            version="0.7",
             author="Chase杨念",
             install_requires="typer",
             author_email="2544704967@qq.com",
             entry_points='''[console_scripts]
-                    graia=Graia_CLI.graia_cli:app'''
+                    graiax=graiax_cli.graia_cli:app'''
             ,description="OwO Graia CLI App",
             licence = "AGPL-3.0" ,
             long_description=long_description,

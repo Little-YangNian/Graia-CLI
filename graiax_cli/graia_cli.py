@@ -1,10 +1,12 @@
 #! python3
 
 from .scaffold import init_tool
+from .scaffold import init_config
 import typer
 import sys
 import os
 from .graia_installer import GraiaInstaller
+from .config import config as cf
 
 def good_echo(text):
     typer.echo(typer.style(text,fg=typer.colors.BRIGHT_GREEN,bold=True))
@@ -23,9 +25,9 @@ def install(
         ):
 
     """ 
-    graia install --install 安装Graia  可选参数版本号
+    graiax install --install 安装Graia  可选参数版本号
     
-    graia install --upgrade 更新Graia
+    graiax install --upgrade 更新Graia
     
     """ 
     
@@ -40,14 +42,25 @@ def install(
             installer.install_v(installv)
 
 @app.command()
-def init(path:str= typer.Argument(...)):
+def init(path: str = typer.Argument(...),
+        c:bool=False):
     
     """
-    graia init [path]
-    
-    init_tool(path)
-    normal_echo("OK")
+    graiax init [path]
     """
+    if c:
+        init_config(path)
+    else:
+        normal_echo(path)
+        init_tool(path)
+        normal_echo("OK")
+@app.command()
+def config(path: str = typer.Argument(...),
+        url: str= typer.Option(...),
+        qid: str= typer.Option(...),
+        key: str= typer.Option(...)
+        ,websocket: str= typer.Option(...)):
+    cf(path,url,key,websocket,qid)
 
 if __name__ == "__main__":
     app()
