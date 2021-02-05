@@ -4,11 +4,11 @@
 ~安装 和 更新 graia~
 # ~欢迎大佬吐槽~
 # To Do  
-快速生成项目  
+快速生成项目√
 # 依赖  
 Typer  
 # 食用方法  
-python3 graia_cli.py --help
+graiax --help
 ## Thanks to:  
 [Mirai](https://github.com/mamoe/mirai)  
 [Graia](https://github.com/GraiaProject/Application)  

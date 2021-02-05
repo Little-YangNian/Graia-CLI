@@ -1,6 +1,23 @@
-[build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
+[tool.poetry]
+name = "graiax_cli"
+version = "0.8"
+description = "OwO Graia CLI App"
+authors = [
+	"Chase杨念 <2544704967@qq.com>", 
+	"EricTianC <erictianc@outlook.com>"
 ]
-build-backend = "setuptools.build_meta"
+license = "AGPL-3.0"
+readme = 'README.md'
+repository = "https://github.com/Little-YangNian/Graia-CLI"
+homepage = "https://github.com/Little-YangNian/Graia-CLI"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+typer = "^0.3.2"
+
+[tool.poetry.scripts]
+graix = "graiax_cli.graiax:app"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
