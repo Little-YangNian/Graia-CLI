@@ -24,8 +24,8 @@ jobs:
         pip install setuptools wheel twine
     - name: Build and publish
       env:
-        TWINE_USERNAME: ${{ action.PYPI_NAME }}
-        TWINE_PASSWORD: ${{ action.PYPI_KEY }}
+        TWINE_USERNAME: ${{ env.action.PYPI_NAME }}
+        TWINE_PASSWORD: ${{ env.action.PYPI_KEY }}
       run: |
         python -m poetry build
         twine upload dist/*
