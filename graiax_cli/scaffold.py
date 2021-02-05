@@ -1,11 +1,9 @@
 import requests
 import os
-from pathlib import Path
 
 
 def init_tool(path):
-    path = Path(path)
-    if not path.is_dir():
+    if not os.path.isdir(path):
         os.mkdir(path)
     os.chdir(path)
     botpy = requests.get("https://pan-1302360504.cos.ap-chengdu.myqcloud.com/share/HelloGraia.py")
@@ -13,13 +11,12 @@ def init_tool(path):
         f.write(str(botpy.content.decode("utf-8")))
 
 def init_config(path,):
-    path = Path(path)
-    if not path.is_dir():
+    if not os.path.isdir(path):
         print("你应该先使用graiax config [path]生成配置文件")
     else:
         os.chdir(path)
         try:
-            os.mkdir(Path("app"))
+            os.mkdir("app")
         except:
             pass
         with open("app/app.py",mode="w") as f:
