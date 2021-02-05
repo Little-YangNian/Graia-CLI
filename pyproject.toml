@@ -16,7 +16,7 @@ python = "^3.8"
 typer = "^0.3.2"
 
 [tool.poetry.scripts]
-graix = "graiax_cli.graiax:app"
+graiax = "graiax_cli.graiax:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
