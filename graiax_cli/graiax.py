@@ -4,8 +4,8 @@ import os
 import sys
 import typer
 import logging
-from installer import Installer
-from initializer import Initializer
+from .installer import Installer
+from .initializer import Initializer
 
 app = typer.Typer()
 

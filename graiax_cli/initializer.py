@@ -1,6 +1,6 @@
 import os
 import yaml
-import template
+import graiax_cli.template
 
 class Initializer(object):
     """交互式初始化项目"""
