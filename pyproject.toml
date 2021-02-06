@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "graiax_cli"
-version = "0.9.3"
+version = "0.9.4"
 description = "OwO Graia CLI App"
 authors = [
 	"Chase杨念 <2544704967@qq.com>", 
