@@ -4,11 +4,14 @@
 ~安装 和 更新 graia~
 # ~欢迎大佬吐槽~
 # To Do  
-快速生成项目√
+-[x] 快速生成项目  
+-[] 功能模块化  
+-[] 项目类型化
 # 依赖  
 Typer  
 # 食用方法  
-graiax --help
+pip install graiax_cli 
+graiax ......
 ## Thanks to:  
 [Mirai](https://github.com/mamoe/mirai)  
 [Graia](https://github.com/GraiaProject/Application)  
