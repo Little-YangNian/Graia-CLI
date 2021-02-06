@@ -3,7 +3,7 @@ import os
 import sys
 import logging
 
-class Installer(object):
+class Install(object):
     """安装类
     
     Attributes:
@@ -14,7 +14,7 @@ class Installer(object):
         self.py_path = sys.executable
         self.package = package
         
-        #注册
+        #注册指令
         @app.command()
         def install(upgrade: bool=False, version: str=typer.Argument(None)):
             """安装Graia，--upgrade 升级Graia，可指定版本"""
