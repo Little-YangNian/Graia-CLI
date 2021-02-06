@@ -3,37 +3,25 @@
 import os
 import sys
 import typer
-import logging
-from .installer import Installer
-from .initializer import Initializer
+import inspect
+import importlib
+import .commands
 
 app = typer.Typer()
 
+def load_commands(app: typer.Typer):
+    """加载命令"""
+    pack_path = commands.__path__[0]
+    mods = [file[:-3] for file in os.listdir(pack_path) if file.endswith('.py') and file !='__init__.py']
+    #pack_path = 'commands'
+    pack_path = 'graiax_cli.commands'
+    for mod in mods:
+        module = importlib.import_module(f'.{mod}', pack_path)
+        exec(f'{mod} = module.{mod.capitalize()}(app)')
 
-@app.command()
-def install(upgrade: bool=False, version: str=typer.Argument(None)):
-    """安装Graia，--upgrade 升级Graia，可指定版本"""
-    
-    installer = Installer()
-    if upgrade:
-        if 0 != installer.upgrade():
-            logging.error(u'升级失败')
-            sys.exit(1)
-        logging.info(u'升级成功')
-        
-    else:
-        if 0 != installer.install(version=version):
-            logging.error(u'安装失败')
-            sys.exit(1)
-        logging.info(u'安装成功')
-        
+def main():
+    load_commands(app)
 
-@app.command()
-def init():
-    """交互式初始化Graia项目"""
-    initializer = Initializer()
-    initializer.run()
-    
-    
 if __name__ == '__main__':
+    main()
     app()
