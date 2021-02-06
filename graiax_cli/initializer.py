@@ -1,6 +1,6 @@
 import os
 import yaml
-import template
+from graiax_cli import template
 
 class Initializer(object):
     """交互式初始化项目"""
@@ -8,7 +8,7 @@ class Initializer(object):
     def config(self, auth_key: str, websocket: bool, qq: str, addr: str='http://localhost:8080'):
         config = yaml.dump({'addr': addr, 'authKey': auth_key, 'websocket': websocket, 'qq': int(qq)},
                             Dumper=yaml.SafeDumper)
-        with open('./config.yaml', 'w') as f:
+        with open('./GraiaConfig.yaml', 'w') as f:
             f.write(config)
         
     def run(self):
@@ -29,6 +29,6 @@ class Initializer(object):
             qq = input('你的机器人qq号：')
             self.config(addr=addr, auth_key=auth_key, websocket=websocket, qq=qq)
         with open('app.py', 'w+') as f:
-            f.write(template.template)
+            f.write(template.app)
         with open('bot.py', 'w+') as f:
             f.write(template.bot)

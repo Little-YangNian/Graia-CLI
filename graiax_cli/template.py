@@ -1,9 +1,9 @@
-template=r'''from graia.broadcast import Broadcast
+app=r'''from graia.broadcast import Broadcast
 from graia.application import GraiaMiraiApplication, Session
 import asyncio
 import yaml
 
-with open('config.yaml', 'r') as f:
+with open('GraiaConfig.yaml', 'r') as f:
     configs = yaml.load(f, Loader=yaml.Loader)
 qid = configs['qq']
 address = configs['addr']
