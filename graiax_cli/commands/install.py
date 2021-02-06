@@ -1,7 +1,7 @@
 import typer
 import os
 import sys
-
+import logging
 
 class Installer(object):
     """安装类
@@ -10,9 +10,27 @@ class Installer(object):
         py_path: python解释器路径
         package: 安装包名
     """
-    def __init__(self, package: str='graia-application-mirai'):
+    def __init__(self, app: typer.Typer, package: str='graia-application-mirai'):
         self.py_path = sys.executable
         self.package = package
+        
+        #注册
+        @app.command()
+        def install(upgrade: bool=False, version: str=typer.Argument(None)):
+            """安装Graia，--upgrade 升级Graia，可指定版本"""
+        
+            if upgrade:
+                if 0 != self.upgrade():
+                    logging.error(u'升级失败')
+                    sys.exit(1)
+                logging.info(u'升级成功')
+        
+            else:
+                if 0 != self.install(version=version):
+                    logging.error(u'安装失败')
+                    sys.exit(1)
+                logging.info(u'安装成功')
+        
     
     def install(self, version: str=None):
         """安装

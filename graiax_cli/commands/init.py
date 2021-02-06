@@ -4,7 +4,10 @@ from graiax_cli import template
 
 class Initializer(object):
     """交互式初始化项目"""
-
+    
+    def __init__(self):
+        pass
+        
     def config(self, auth_key: str, websocket: bool, qq: str, addr: str='http://localhost:8080'):
         config = yaml.dump({'addr': addr, 'authKey': auth_key, 'websocket': websocket, 'qq': int(qq)},
                             Dumper=yaml.SafeDumper)
