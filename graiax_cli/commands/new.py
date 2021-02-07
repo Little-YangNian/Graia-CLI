@@ -1,16 +1,20 @@
 import os
 import yaml
-from typer import Typer
+import typer
 from graiax_cli import template
 
-class Init(object):
+class New(object):
     """交互式初始化项目"""
     
-    def __init__(self, app: Typer):
+    def __init__(self, app: typer.Typer):
 
         @app.command()
-        def init():
-            """交互式初始化Graia项目"""
+        def new(type: str=typer.Argument('project')):
+            """
+            新建Graia项目
+            
+            type: 项目类型
+            """
             self.run()
         
     def config(self, auth_key: str, websocket: bool, qq: str, addr: str='http://localhost:8080'):
@@ -40,3 +44,5 @@ class Init(object):
             f.write(template.app)
         with open('bot.py', 'w+') as f:
             f.write(template.bot)
+
+

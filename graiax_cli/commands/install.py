@@ -17,7 +17,7 @@ class Install(object):
         #注册指令
         @app.command()
         def install(upgrade: bool=False, version: str=typer.Argument(None)):
-            """安装Graia，--upgrade 升级Graia，可指定版本"""
+            """安装Graia，可指定版本，--upgrade 升级Graia"""
         
             if upgrade:
                 if 0 != self.upgrade():
