@@ -1,6 +1,7 @@
 import os
 import yaml
 import typer
+import requests
 from graiax_cli import template
 
 class New(object):
@@ -13,10 +14,12 @@ class New(object):
             """
             新建Graia项目
             
-            type: 项目类型
+            type: 项目类型，可选project, plugin
             """
             self.run()
-        
+
+
+    """
     def config(self, auth_key: str, websocket: bool, qq: str, addr: str='http://localhost:8080'):
         config = yaml.dump({'addr': addr, 'authKey': auth_key, 'websocket': websocket, 'qq': int(qq)},
                             Dumper=yaml.SafeDumper)
@@ -45,4 +48,16 @@ class New(object):
         with open('bot.py', 'w+') as f:
             f.write(template.bot)
 
+"""
 
+class TemplateGetClient(object):
+    """从指定的网络位置获取项目和插件模板
+
+    Attributes:
+        url: 网址
+    """
+    def __init__(self, url: str):
+        self.url = url
+
+    def get(self, type: str) -> :
+        

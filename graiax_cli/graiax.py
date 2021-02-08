@@ -30,9 +30,7 @@ def load_commands(app: typer.Typer):
         module = importlib.import_module(f'.{mod}', pack_path)
         exec(f'{mod} = module.{mod.capitalize()}(app)')
 
-def main():
-    load_commands(app)
+load_commands(app)
 
 if __name__ == '__main__':
-    main()
     app()
