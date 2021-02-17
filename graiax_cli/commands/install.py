@@ -12,13 +12,24 @@ class Install(object):
     """
     def __init__(self, app: typer.Typer, package: str='graia-application-mirai'):
         self.py_path = sys.executable
-        self.package = package
+
         
         #注册指令
         @app.command()
-        def install(upgrade: bool=False, version: str=typer.Argument(None)):
+        def install(name: str=typer.Argument(None), upgrade: bool=False, version: str=typer.Argument(None)):
             """安装Graia，--upgrade 升级Graia，可指定版本"""
-        
+            if name == "Application" :
+                self.package = "graia-application-mirai"
+            elif name == "Scheduler":
+                self.package = "graia-scheduler"
+            elif name == "Saya":
+                self.package = "graia-saya"
+            elif name == None:
+                logging.warn("没有传入任何参数，即将安装/更新 Graia Application")
+                self.package = "graia-application-mirai"
+            else:
+                logging.error("传入了Graiax不能安装的包")
+                quit()
             if upgrade:
                 if 0 != self.upgrade():
                     logging.error(u'升级失败')
