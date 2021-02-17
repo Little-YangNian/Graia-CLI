@@ -12,7 +12,7 @@ repository = "https://github.com/Little-YangNian/Graia-CLI"
 homepage = "https://github.com/Little-YangNian/Graia-CLI"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 typer = "^0.3.2"
 
 [tool.poetry.scripts]
