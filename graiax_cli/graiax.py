@@ -5,8 +5,8 @@ import sys
 import typer
 import inspect
 import importlib
-#from graiax_cli import commands
-import commands
+from graiax_cli import commands
+#import commands
 
 app = typer.Typer()
 
