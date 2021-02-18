@@ -16,7 +16,8 @@ class New(object):
             
             type: 项目类型，可选project, plugin
             """
-            self.run()
+            #self.run()
+            pass
 
 
     """
@@ -59,5 +60,5 @@ class TemplateGetClient(object):
     def __init__(self, url: str):
         self.url = url
 
-    def get(self, type: str) -> :
-        
+    def get(self, type: str):
+        pass
