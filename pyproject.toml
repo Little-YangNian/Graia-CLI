@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "graiax_cli"
-version = "0.9.5"
+version = "0.9.6"
 description = "OwO Graia CLI App"
 authors = [
 	"Chase杨念 <2544704967@qq.com>", 
@@ -14,6 +14,7 @@ homepage = "https://github.com/Little-YangNian/Graia-CLI"
 [tool.poetry.dependencies]
 python = "^3.6"
 typer = "^0.3.2"
+
 
 [tool.poetry.scripts]
 graiax = "graiax_cli.graiax:app"
