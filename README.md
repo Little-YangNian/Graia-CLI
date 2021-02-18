@@ -1,4 +1,4 @@
-# Graia-CLI  
+# Graiax-CLI  
 # 一个尚未完成的脚手架  
 # 它能做什么  
 ~安装 和 更新 graia~
