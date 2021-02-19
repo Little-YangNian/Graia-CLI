@@ -24,8 +24,8 @@ def load_commands(app: typer.Typer):
     mods = [file[:-3] 
                 for file in os.listdir(pack_path) 
                     if file.endswith('.py') and not file.startswith('_')]
-    pack_path = 'commands'
-    #pack_path = 'graiax_cli.commands'
+    #pack_path = 'commands'
+    pack_path = 'graiax_cli.commands'
     for mod in mods:
         module = importlib.import_module(f'.{mod}', pack_path)
         exec(f'{mod} = module.{mod.capitalize()}(app)')

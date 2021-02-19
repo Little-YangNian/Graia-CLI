@@ -2,7 +2,7 @@ import os
 import yaml
 import typer
 import requests
-from graiax_cli import template
+#from graiax_cli import template
 
 class New(object):
     """交互式初始化项目"""
