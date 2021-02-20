@@ -22,7 +22,7 @@ class Install(object):
                     "application":"graia-application-mirai",
                     "scheduler":"graia-scheduler",
                     "saya":"graia-saya",
-                    None:"graia-application-mirai"
+                    "None":"graia-application-mirai"
                     }
 
             try:
