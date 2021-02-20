@@ -18,11 +18,13 @@ class Install(object):
         @app.command()
         def install(name: str=typer.Argument(None), upgrade: bool=False, version: str=typer.Argument(None)):
             """安装Graia系列\n参数application 安装Application\nscheduler 安装Scheduler\nsaya 安装saya\n默认application，选项––upgrade可以更新"""
+            if name == None:
+                name = "None"
             things = {
                     "application":"graia-application-mirai",
                     "scheduler":"graia-scheduler",
                     "saya":"graia-saya",
-                    "None":"graia-application-mirai"
+                    "none":"graia-application-mirai"
                     }
 
             try:
