@@ -17,22 +17,19 @@ class Install(object):
         #注册指令
         @app.command()
         def install(name: str=typer.Argument(None), upgrade: bool=False, version: str=typer.Argument(None)):
-            """安装Graia，--upgrade 升级Graia，可指定版本"""
-            if name.capitalize() == "Application" :
-                self.package = "graia-application-mirai"
-            elif name.capitalize() == "Scheduler":
-                self.package = "graia-scheduler"
-            elif name.capitalize() == "Saya":
-                self.package = "graia-saya"
-            elif name.capitalize() == "Self" or name.capitalize() == "Graiax":
-            	self.package = "graiax_cli"
-            elif name == None:
-                logging.warn("没有传入任何参数，即将安装/更新 Graia Application")
-                self.package = "graia-application-mirai"
-            else:
-                logging.error("传入了Graiax不能安装的包")
+            """安装Graia系列\n参数application 安装Application\nscheduler 安装Scheduler\nsaya 安装saya\n默认application，选项––upgrade可以更新"""
+            things = {
+                    "application":"graia-application-mirai",
+                    "scheduler":"graia-scheduler",
+                    "saya":"graia-saya",
+                    None:"graia-application-mirai"
+                    }
+
+            try:
+                self.package = things[name.lower()]
+            except:
+                logging.error("没有")
                 quit()
-                
             if upgrade:
                 if 0 != self.upgrade():
                     logging.error(u'升级失败')
