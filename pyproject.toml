@@ -14,6 +14,7 @@ homepage = "https://github.com/Little-YangNian/Graia-CLI"
 [tool.poetry.dependencies]
 python = "^3.6"
 typer = "^0.3.2"
+pyyaml = "^5.4.1"
 
 
 [tool.poetry.scripts]
