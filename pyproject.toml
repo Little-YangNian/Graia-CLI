@@ -13,12 +13,12 @@ homepage = "https://github.com/Little-YangNian/Graia-CLI"
 
 [tool.poetry.dependencies]
 python = "^3.6"
-click = "^0.3.2"
 pyyaml = "^5.4.1"
+click = "^7.1.2"
 
 
 [tool.poetry.scripts]
-graiax = "graiax.main:app"
+graiax = "graiax_cli.main:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

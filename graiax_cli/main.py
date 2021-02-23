@@ -1,7 +1,7 @@
 import os
 import click
 import importlib
-
+os.chdir("graiax_cli")
 
 @click.group()
 def group():
@@ -13,7 +13,7 @@ def cli():
     for i in cmdlist:
         if i.endswith('.py') and i != '__init__.py':
             i = i.replace('.py', '')
-            cmd = importlib.import_module('commands.' + i)
+            cmd = importlib.import_module('graiax_cli.commands.' + i)
             group.add_command(cmd.main)
     return group
 
