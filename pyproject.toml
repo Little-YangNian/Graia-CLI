@@ -18,7 +18,7 @@ pyyaml = "^5.4.1"
 
 
 [tool.poetry.scripts]
-graiax = "graiax_cli.graiax:app"
+graiax = "graiax.main:app"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
